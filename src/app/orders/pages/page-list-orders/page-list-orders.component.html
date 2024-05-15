@@ -1,28 +1,25 @@
 <h3>Liste des commandes</h3>
 
 <table class="table">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Client</th>
-        <th>Comment</th>
-        <th>Number of Days</th>
-        <th>State</th>
-        <th>TJM HT</th>
-        <th>TVA</th>
-        <th>Type of Service</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let item of orders">
-            <td>{{ item.id }}</td>
-            <td>{{ item.client }}</td>
-            <td>{{ item.comment }}</td>
-            <td>{{ item.nbJours }}</td>
-            <td>{{ item.state }}</td>
-            <td>{{ item.tjmHt }}</td>
-            <td>{{ item.tva }}</td>
-            <td>{{ item.typePresta }}</td>
-          </tr>
-    </tbody>
+<table class="table">
+  <thead>
+    <tr>
+      <th *ngFor="let header of headers"  scope="col">
+          {{ header }}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let obj of orders">
+      <td><app-edit itemId={{obj.id}} category="/orders"></app-edit></td>
+      <td>{{obj.typePresta | uppercase}}</td>
+      <td>{{obj.client}}</td>
+      <td>{{obj.nbJours}}</td>
+      <td>{{obj.tjmHt}}</td>
+      <td>{{ obj.tjmHt | total :obj.nbJours | currency }}</td>
+      <td>{{ obj.tjmHt | total :obj.nbJours : obj.tva | currency}}</td>
+      <td>{{obj.state}}</td>
+    </tr>
+  </tbody>
 </table>
+

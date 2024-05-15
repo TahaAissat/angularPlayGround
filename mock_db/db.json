@@ -1,80 +1,100 @@
 {
-    "orders": [
-      {
-        "tjmHt": 1200,
-        "nbJours": 10,
-        "tva": 20,
-        "state": "OPTION",
-        "typePresta": "formation",
-        "client": "nouveau",
-        "comment": "",
-        "id": "2"
-      },
-      {
-        "tjmHt": 1200,
-        "nbJours": 2,
-        "tva": 20,
-        "state": "OPTION",
-        "typePresta": "formation",
-        "client": "nouveau",
-        "comment": null,
-        "id": "3"
-      },
-      {
-        "tjmHt": 1200,
-        "nbJours": 8,
-        "tva": 20,
-        "state": "OPTION",
-        "typePresta": "coaching",
-        "client": "nouveau",
-        "comment": "RAS",
-        "id": "5"
-      },
-      {
-        "id": 11,
-        "tjmHt": 1200,
-        "typePresta": "Formation",
-        "nbJours": 4,
-        "tva": 20,
-        "state": "OPTION",
-        "client": "Client 4",
-        "comment": null
-      },
-      {
-        "id": 10,
-        "tjmHt": 1200,
-        "typePresta": "Conseil",
-        "nbJours": 4,
-        "tva": 20,
-        "state": "CANCELLED",
-        "client": "Client 5",
-        "comment": null
-      }
-    ],
-    "clients": [
-      {
-        "state": "INACTIVE",
-        "tva": 20,
-        "id": "1",
-        "name": "Capgemini",
-        "totalCaHt": 120000,
-        "comment": "un comment pour client modis"
-      },
-      {
-        "state": "ACTIVE",
-        "tva": 20,
-        "id": "2",
-        "name": "Modis",
-        "totalCaHt": 120000,
-        "comment": "un comment pour client modis"
-      },
-      {
-        "tva": 20,
-        "state": "INACTIVE",
-        "name": "modis",
-        "totalCaHt": 0,
-        "comment": "",
-        "id": "3"
-      }
-    ]
-  }
+  "orders": [
+    {
+      "client": "test2",
+      "comment": "",
+      "nbJours": "28",
+      "state": "OPTION",
+      "tjmHt": 1200,
+      "tva": "25",
+      "typePresta": "formation",
+      "id": "2"
+    },
+    {
+      "client": "nouveau",
+      "comment": null,
+      "nbJours": "10",
+      "state": "OPTION",
+      "tjmHt": "1250",
+      "tva": 20,
+      "typePresta": "formation",
+      "id": "3"
+    },
+    {
+      "tjmHt": 1200,
+      "nbJours": 8,
+      "tva": 20,
+      "state": "OPTION",
+      "typePresta": "coaching",
+      "client": "nouveau",
+      "comment": "RAS",
+      "id": "5"
+    },
+    {
+      "client": "Client 4",
+      "comment": null,
+      "nbJours": 4,
+      "state": "OPTION",
+      "tjmHt": 1200,
+      "tva": "20",
+      "typePresta": "Formation",
+      "id": "11"
+    },
+    {
+      "client": "Auchan",
+      "comment": null,
+      "nbJours": 4,
+      "state": "CANCELLED",
+      "tjmHt": 1200,
+      "tva": 20,
+      "typePresta": "Conseil",
+      "id": "10"
+    },
+    {
+      "id": "f6b3",
+      "client": "",
+      "comment": "",
+      "nbJours": 1,
+      "state": "OPTION",
+      "tjmHt": 1200,
+      "tva": 20,
+      "typePresta": ""
+    },
+    {
+      "id": "af3b",
+      "client": "",
+      "comment": "",
+      "nbJours": 1,
+      "state": "OPTION",
+      "tjmHt": "1400",
+      "tva": 20,
+      "typePresta": ""
+    }
+  ],
+  "clients": [
+    {
+      "state": "INACTIVE",
+      "tva": 20,
+      "id": "1",
+      "name": "Capgemini",
+      "totalCaHt": 120000,
+      "comment": "un comment pour client modis"
+    },
+    {
+      "state": "ACTIVE",
+      "tva": 20,
+      "id": "2",
+      "name": "Modis",
+      "totalCaHt": 120000,
+      "comment": "un comment pour client modis"
+    },
+    {
+      "tva": 20,
+      "state": "INACTIVE",
+      "name": "modis",
+      "totalCaHt": 0,
+      "comment": "",
+      "id": "3"
+    }
+  ]
+}

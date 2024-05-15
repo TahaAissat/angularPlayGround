@@ -1,26 +1,56 @@
 <ul class="nav flex-column">
-    <li class="nav-item">
-      <a class="nav-link" routerLink='orders' routerLinkActive="active" [routerLinkActiveOptions]='{exact:true}'>Acceuil</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink='orders/add' routerLinkActive="active" [routerLinkActiveOptions]='{exact:true}'>Ajouter une commande</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink='orders/edit' routerLinkActive="active" [routerLinkActiveOptions]='{exact:true}'>Editer une commande</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink='test' routerLinkActive="active" [routerLinkActiveOptions]='{exact:true}'>Test 404</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink='clients' routerLinkActive="active" [routerLinkActiveOptions]='{exact:true}'>Liste des clients</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink='clients/add' routerLinkActive="active" [routerLinkActiveOptions]='{exact:true}'>Ajouter un client</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink='clients/edit' routerLinkActive="active" [routerLinkActiveOptions]='{exact:true}'>Editer un client</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink='test1' routerLinkActive="active" [routerLinkActiveOptions]='{exact:true}'>Test 404</a>
-    </li>
-  </ul>
+  <li class="nav-item">
+    <a
+      class="nav-link"
+      routerLink="orders"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Acceuil</a
+    >
+  </li>
+  <li class="nav-item">
+    <a
+      class="nav-link"
+      routerLink="orders/add"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Ajouter une commande</a
+    >
+  </li>
+  <li class="nav-item">
+    <a
+      class="nav-link"
+      routerLink="clients"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Liste des clients</a
+    >
+  </li>
+  <li class="nav-item">
+    <a
+      class="nav-link"
+      routerLink="clients/add"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Ajouter un client</a
+    >
+  </li>
+  <li class="nav-item">
+    <a
+      class="nav-link"
+      routerLink="/orders/demo-obs"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Demo Obs</a
+    >
+  </li>
+  <li class="nav-item">
+    <a
+      class="nav-link"
+      routerLink="/orders/demo-subject"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Demo Subject</a
+    >
+  </li>
+</ul>

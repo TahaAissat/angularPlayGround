@@ -4,6 +4,9 @@ import { PageAddClientComponent } from './pages/page-add-client/page-add-client.
 import { PageEditClientComponent } from './pages/page-edit-client/page-edit-client.component';
 import { PageListClientsComponent } from './pages/page-list-clients/page-list-clients.component';
 import { ClientsRoutingModule } from './clients-routing.module';
+import { SharedModule } from '../shared/shared.module';
+import { ClientFormComponent } from './client-form/client-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -11,11 +14,14 @@ import { ClientsRoutingModule } from './clients-routing.module';
   declarations: [
     PageAddClientComponent,
     PageEditClientComponent,
-    PageListClientsComponent
+    PageListClientsComponent,
+    ClientFormComponent
   ],
   imports: [
     CommonModule,
-    ClientsRoutingModule
+    ClientsRoutingModule,
+    SharedModule,
+    ReactiveFormsModule
   ]
 })
 export class ClientsModule { }

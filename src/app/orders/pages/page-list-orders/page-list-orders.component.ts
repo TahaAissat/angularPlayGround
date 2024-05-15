@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { OrdersService } from '../../services/orders.service';
+import { Order } from '../../../core/models/order';
 
 @Component({
   selector: 'app-page-list-orders',
@@ -7,11 +8,21 @@ import { OrdersService } from '../../services/orders.service';
   styleUrl: './page-list-orders.component.scss'
 })
 export class PageListOrdersComponent {
-  public orders : any ; 
+  public orders! : Order[]  ; 
+  public headers: string[] = [
+    "Action", 
+    "Type", 
+    "Client", 
+    "Nb Jours", 
+    "Tjm HT", 
+    'Total HT', 
+    "Total TTC", 
+    "Etat"
+  ]
 
   constructor(private ordersService : OrdersService){
-    console.log(this.ordersService.sumUp(1,2))
   }
+
 
   ngOnInit(){
     this.ordersService.getDatas().subscribe(data => {

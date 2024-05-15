@@ -8,7 +8,7 @@ import { PageEditClientComponent } from './pages/page-edit-client/page-edit-clie
 const routes: Routes = [
     {path: '', component:PageListClientsComponent},
     {path: 'add', component: PageAddClientComponent},
-    {path: 'edit', component: PageEditClientComponent}
+    {path: 'edit/:id', component: PageEditClientComponent}
 ];
 
 @NgModule({

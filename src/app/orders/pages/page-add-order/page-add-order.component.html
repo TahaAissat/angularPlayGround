@@ -1,19 +1,8 @@
-<div>
-  <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-    <label for="produit">Produit</label>
-    <input
-      id="produit"
-      type="text"
-      formControlName="produit"
-      placeholder="nom du produit"
-    />
-    <label for="nombre">Nombre</label>
-    <input
-      id="nombre"
-      type="number"
-      formControlName="nombre"
-      placeholder="quantitée désirée"
-    />
-    <button type="submit">Accept</button>
-  </form>
-</div>
+<form id="form" [formGroup]="myForm" (ngSubmit)="onSubmit()" >
+    <div class="form-group" *ngFor="let element of keys">
+        <label for={{element}}>{{element}}</label>
+        <input class='form-control' id={{element}} type='text' formControlName={{element}} placeholder={{element}}/>
+    </div>
+    <button type="submit" class="btn btn-primary">Confirmer</button>
+</form>
+
