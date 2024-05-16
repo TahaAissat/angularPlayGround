@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import { PageDemoObsComponent } from './pages/page-demo-obs/page-demo-obs.component';
 import { PageDemoSubjectComponent } from './pages/page-demo-subject/page-demo-subject.component';
+import { FormOrderComponent } from './components/form-order/form-order.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { PageDemoSubjectComponent } from './pages/page-demo-subject/page-demo-su
     PageListOrdersComponent,
     PageDemoObsComponent,
     PageDemoSubjectComponent,
+    FormOrderComponent,
   ],
   imports: [
     CommonModule,

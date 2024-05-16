@@ -1,25 +1,28 @@
 <h3>Liste des commandes</h3>
 
 <table class="table">
-<table class="table">
-  <thead>
-    <tr>
-      <th *ngFor="let header of headers"  scope="col">
+  <table class="table">
+    <thead>
+      <tr>
+        <th *ngFor="let header of headers" scope="col">
           {{ header }}
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let obj of orders">
-      <td><app-edit itemId={{obj.id}} category="/orders"></app-edit></td>
-      <td>{{obj.typePresta | uppercase}}</td>
-      <td>{{obj.client}}</td>
-      <td>{{obj.nbJours}}</td>
-      <td>{{obj.tjmHt}}</td>
-      <td>{{ obj.tjmHt | total :obj.nbJours | currency }}</td>
-      <td>{{ obj.tjmHt | total :obj.nbJours : obj.tva | currency}}</td>
-      <td>{{obj.state}}</td>
-    </tr>
-  </tbody>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let obj of orders">
+        <td>
+          <app-edit itemId="{{ obj.id }}" category="/orders"></app-edit>
+        </td>
+        <td>{{ obj.typePresta | uppercase }}</td>
+        <td>{{ obj.client }}</td>
+        <td>{{ obj.nbJours }}</td>
+        <td>{{ obj.tjmHt }}</td>
+        <td>{{ obj.tjmHt | total : obj.nbJours | currency }}</td>
+        <td>{{ obj.tjmHt | total : obj.nbJours : obj.tva | currency }}</td>
+        <td>{{ obj.state }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <app-btn label="Ajouter" styleBtn="btn btn-success" routeInfo="/orders/add"></app-btn>
 </table>
-

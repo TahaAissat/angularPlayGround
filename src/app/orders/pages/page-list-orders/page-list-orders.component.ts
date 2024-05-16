@@ -22,12 +22,11 @@ export class PageListOrdersComponent {
 
   constructor(private ordersService : OrdersService){
   }
-
-
   ngOnInit(){
     this.ordersService.getDatas().subscribe(data => {
       this.orders = data
       console.log('Commandes' , this.orders)
     }) 
   }
+
 }

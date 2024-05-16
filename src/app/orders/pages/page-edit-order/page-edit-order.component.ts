@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
 import { OrdersService } from '../../services/orders.service'; 
 import { ActivatedRoute, Router } from '@angular/router';
+import { Order } from '../../../core/models/order';
 
 
 @Component({
@@ -11,9 +11,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class PageEditOrderComponent {
 
-  public order!: any;
-  public keys!: string[];
-  public id!: number;
+  public init! : Order
+  public id!: any;
 
   constructor(
     private ordersService: OrdersService,
@@ -22,31 +21,16 @@ export class PageEditOrderComponent {
   ) {}
 
   ngOnInit() {
-    let id = this.route.snapshot.paramMap.get('id');
-    this.ordersService.getDatasByID(id).subscribe((data) => {
-      this.order = data;
-      this.keys = Object.keys(this.order).filter((e) => e !== 'id');
-      this.myForm.patchValue(this.order);
+    let id = this.route.snapshot.paramMap.get('id')
+    this.ordersService.getDatasByID(id).subscribe(data => {
+      console.log(data)
+      this.init = data;
     });
   }
 
-  myForm: FormGroup = new FormGroup({
-    client: new FormControl(''),
-    comment: new FormControl(''),
-    nbJours: new FormControl(''),
-    state: new FormControl(''),
-    tjmHt: new FormControl(''),
-    tva: new FormControl(''),
-    typePresta: new FormControl(''),
-  });
 
-  onSubmit() {
+  onEdit(data:Order) {
     let id = this.route.snapshot.paramMap.get('id');
-    this.ordersService
-      .updateDatasByID(id, this.myForm.value)
-      .subscribe((data) => {
-        console.log(data);
-      });
     this.router.navigateByUrl('/orders');
   }
 }
