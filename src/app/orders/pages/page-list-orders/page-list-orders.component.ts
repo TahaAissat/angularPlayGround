@@ -39,7 +39,7 @@ export class PageListOrdersComponent {
   }
   onDelete(id: any) {
     this.ordersService.deleteDatas(id).subscribe(() => {
-      this.orders = this.orders.filter((e: Order) => e.id !== id);
+      this.filteredOrders = this.orders.filter((e: Order) => e.id !== id);
     });
   }
   onClick() {
