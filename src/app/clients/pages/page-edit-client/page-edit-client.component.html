@@ -1,1 +1,5 @@
-<app-client-form></app-client-form>
+<div *ngIf="init">
+    <app-form-client [objClient]="init" (submitted)="onEdit($event)" >
+
+    </app-form-client>
+</div>

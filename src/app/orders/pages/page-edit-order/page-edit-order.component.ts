@@ -12,7 +12,7 @@ import { Order } from '../../../core/models/order';
 export class PageEditOrderComponent {
 
   public init! : Order
-  public id!: any;
+  public id! : any
 
   constructor(
     private ordersService: OrdersService,
@@ -23,7 +23,6 @@ export class PageEditOrderComponent {
   ngOnInit() {
     let id = this.route.snapshot.paramMap.get('id')
     this.ordersService.getDatasByID(id).subscribe(data => {
-      console.log(data)
       this.init = data;
     });
   }
@@ -31,6 +30,8 @@ export class PageEditOrderComponent {
 
   onEdit(data:Order) {
     let id = this.route.snapshot.paramMap.get('id');
+    this.ordersService.updateDatasByID(id,data).subscribe(() => {
     this.router.navigateByUrl('/orders');
+    })
   }
 }

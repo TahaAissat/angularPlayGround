@@ -1,28 +1,39 @@
 <h3>Liste des commandes</h3>
-
+<div>
+  <span>Filter par type:</span>
+  <select [(ngModel)]="filterOption">
+    <option *ngFor="let i of orderTypes"
+            [value] = 'i'>{{i}}</option>
+  </select>
+  <button class="btn btn-primary" (click)="onClick()">Filter</button>
+</div>
 <table class="table">
-  <table class="table">
-    <thead>
-      <tr>
-        <th *ngFor="let header of headers" scope="col">
-          {{ header }}
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let obj of orders">
-        <td>
-          <app-edit itemId="{{ obj.id }}" category="/orders"></app-edit>
-        </td>
-        <td>{{ obj.typePresta | uppercase }}</td>
-        <td>{{ obj.client }}</td>
-        <td>{{ obj.nbJours }}</td>
-        <td>{{ obj.tjmHt }}</td>
-        <td>{{ obj.tjmHt | total : obj.nbJours | currency }}</td>
-        <td>{{ obj.tjmHt | total : obj.nbJours : obj.tva | currency }}</td>
-        <td>{{ obj.state }}</td>
-      </tr>
-    </tbody>
-  </table>
-  <app-btn label="Ajouter" styleBtn="btn btn-success" routeInfo="/orders/add"></app-btn>
+  <thead>
+    <tr>
+      <th *ngFor="let header of headers" scope="col">
+        {{ header }}
+      </th>
+    </tr>
+  </thead>
+  <tbody >
+    <tr *ngFor="let obj of filteredOrders">
+      <td>
+        <app-edit itemId="{{ obj.id }}" category="/orders"></app-edit>
+        <app-delete-btn (deleted)="onDelete(obj.id)"></app-delete-btn>
+      </td>
+      <td>{{ obj.typePresta | uppercase }}</td>
+      <td>{{ obj.comment }}</td>
+      <td>{{ obj.client }}</td>
+      <td>{{ obj.nbJours }}</td>
+      <td>{{ obj.tjmHt }}</td>
+      <td>{{ obj.tjmHt | total : obj.nbJours | currency }}</td>
+      <td>{{ obj.tjmHt | total : obj.nbJours : obj.tva | currency }}</td>
+      <td>{{ obj.state }}</td>
+    </tr>
+  </tbody>
 </table>
+<app-btn
+  label="Ajouter"
+  styleBtn="btn btn-success"
+  routeInfo="/orders/add"
+></app-btn>

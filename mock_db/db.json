@@ -2,12 +2,12 @@
   "orders": [
     {
       "client": "test2",
-      "comment": "",
+      "comment": "Add comment for test",
       "nbJours": "28",
-      "state": "OPTION",
+      "state": "CANCELLED",
       "tjmHt": 1200,
       "tva": "25",
-      "typePresta": "formation",
+      "typePresta": "COACHING",
       "id": "2"
     },
     {
@@ -17,7 +17,7 @@
       "state": "OPTION",
       "tjmHt": "1250",
       "tva": 20,
-      "typePresta": "formation",
+      "typePresta": "FORMATION",
       "id": "3"
     },
     {
@@ -25,7 +25,7 @@
       "nbJours": 8,
       "tva": 20,
       "state": "OPTION",
-      "typePresta": "coaching",
+      "typePresta": "COACHING",
       "client": "nouveau",
       "comment": "RAS",
       "id": "5"
@@ -37,7 +37,7 @@
       "state": "OPTION",
       "tjmHt": 1200,
       "tva": "20",
-      "typePresta": "Formation",
+      "typePresta": "FORMATION",
       "id": "11"
     },
     {
@@ -47,54 +47,56 @@
       "state": "CANCELLED",
       "tjmHt": 1200,
       "tva": 20,
-      "typePresta": "Conseil",
+      "typePresta": "CONSEIL",
       "id": "10"
     },
     {
-      "id": "f6b3",
-      "client": "",
-      "comment": "",
+      "client": "ibcegos",
+      "comment": null,
+      "nbJours": 15,
+      "state": "CANCELLED",
+      "tjmHt": 1500,
+      "tva": 20,
+      "typePresta": "FORMATION",
+      "id": "e8f9"
+    },
+    {
+      "id": "636b",
+      "client": "test",
+      "comment": null,
+      "nbJours": 1500,
+      "state": "CONFIRMED",
+      "tjmHt": 1200,
+      "tva": 20,
+      "typePresta": "CONSEIL"
+    },
+    {
+      "id": "b815",
+      "client": "ibcegos",
+      "comment": null,
       "nbJours": 1,
       "state": "OPTION",
       "tjmHt": 1200,
       "tva": 20,
-      "typePresta": ""
-    },
-    {
-      "id": "af3b",
-      "client": "",
-      "comment": "",
-      "nbJours": 1,
-      "state": "OPTION",
-      "tjmHt": "1400",
-      "tva": 20,
-      "typePresta": ""
+      "typePresta": "FORMATION"
     }
   ],
   "clients": [
     {
-      "state": "INACTIVE",
-      "tva": 20,
-      "id": "1",
-      "name": "Capgemini",
-      "totalCaHt": 120000,
-      "comment": "un comment pour client modis"
-    },
-    {
+      "id": "f028",
+      "name": "Test",
+      "comment": "ezaeza",
       "state": "ACTIVE",
-      "tva": 20,
-      "id": "2",
-      "name": "Modis",
-      "totalCaHt": 120000,
-      "comment": "un comment pour client modis"
+      "totalCaHt": 1500,
+      "tva": 20
     },
     {
-      "tva": 20,
-      "state": "INACTIVE",
-      "name": "modis",
-      "totalCaHt": 0,
-      "comment": "",
-      "id": "3"
+      "id": "4db6",
+      "name": "Test",
+      "comment": null,
+      "state": "ACTIVE",
+      "totalCaHt": 15000,
+      "tva": 20
     }
   ]
 }

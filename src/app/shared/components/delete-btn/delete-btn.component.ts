@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, EventEmitter, Output } from '@angular/core';
+
 
 @Component({
   selector: 'app-delete-btn',
@@ -8,15 +8,9 @@ import { Router } from '@angular/router';
 })
 export class DeleteBtnComponent {
 
-@Input() category : any;
-route : any ; 
+@Output() deleted = new EventEmitter
 
-constructor(private router:Router) {}
-
-ngOnInit() : void {
-  this.route = `${this.category}`
-}
 onClick() {
-  this.router.navigateByUrl(this.route)
+  this.deleted.emit()
 }
 }

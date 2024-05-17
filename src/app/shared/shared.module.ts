@@ -7,6 +7,7 @@ import { TotalPipe } from './pipes/total.pipe';
 import { AddBtnComponent } from './components/add-btn/add-btn.component';
 import { DeleteBtnComponent } from './components/delete-btn/delete-btn.component';
 import { BtnComponent } from './components/btn/btn.component';
+import { TotalCaPipe } from './pipes/total-ca.pipe';
 
 
 
@@ -18,15 +19,17 @@ import { BtnComponent } from './components/btn/btn.component';
     AddBtnComponent,
     DeleteBtnComponent,
     BtnComponent,
+    TotalCaPipe,
   ],
   imports: [
     CommonModule,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   exports: [
     EditComponent,
     TotalPipe,
+    TotalCaPipe,
     AddBtnComponent,
     DeleteBtnComponent,
     BtnComponent

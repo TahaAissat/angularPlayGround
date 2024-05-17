@@ -1,0 +1,53 @@
+<div class="container">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Nom</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          formControlName="name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="tjmHt">TotalCaHt</label>
+        <input
+          type="number"
+          class="form-control"
+          id="totalCaHt"
+          formControlName="totalCaHt"
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="tva">tva</label>
+        <input
+          type="number"
+          class="form-control"
+          id="tva"
+          formControlName="tva"
+        />
+      </div>
+  
+      <div class="form-group select">
+        <label for="state">state</label>
+        <select formControlName="state">
+          <option *ngFor='let i of states'
+                  [value] = 'i'>
+                  {{i}}
+          </option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label for="comment">comment</label>
+        <textarea
+          class="form-control"
+          id="comment"
+          formControlName="comment"
+        ></textarea>
+      </div>
+      <button class="btn btn-primary" type="submit">Valider</button>
+    </form>
+  </div>
+  

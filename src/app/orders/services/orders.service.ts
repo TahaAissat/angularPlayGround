@@ -18,14 +18,14 @@ export class OrdersService {
   }
   public updateDatasByID(
     id: any,
-    data: Observable<Order[]>
-  ): Observable<Order[]> {
-    return this.http.put<Order[]>(this.url + id, data);
+    data: Order
+  ): Observable<Order> {
+    return this.http.put<Order>(this.url + id, data);
   }
   public addDatas(data: Order): Observable<Order> {
     return this.http.post<Order>(this.url, data);
   }
-  // public deleteDatas (data:Observable<Order[]>) : Observable<Order[]>{
-  //   return this.http.delete<Order[]>(this.url + '/', data)
-  // }
+  public deleteDatas (id:any) : Observable<Order>{
+    return this.http.delete<Order>(this.url   + id)
+  }
 }

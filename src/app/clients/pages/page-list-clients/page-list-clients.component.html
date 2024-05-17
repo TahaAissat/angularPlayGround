@@ -1,25 +1,33 @@
-<h3>Liste des clients</h3>
-<table class="table">
-    <thead>
-      <tr>
-        <th>Actions</th>
-        <th>ID</th>
-        <th>Nom</th>
-        <th>Comment</th>
-        <th>State</th>
-        <th>TJM HT</th>
-        <th>TVA</th>
-      </tr>
-    </thead>
-    <tbody>
+<div class="container">
+  <h3>Liste des clients</h3>
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th *ngFor="let header of headers" scope="col">
+            {{ header }}
+          </th>
+        </tr>
+      </thead>
+      <tbody>
         <tr *ngFor="let item of clients">
-            <td><app-edit itemId={{item.id}} category="clients"/></td>
-            <td>{{ item.id }}</td>
-            <td>{{ item.name }}</td>
-            <td>{{ item.comment}}</td>
-            <td>{{ item.state }}</td>
-            <td>{{ item.tjmHt }}</td>
-            <td>{{ item.tva }}</td>
-          </tr>
-    </tbody>
-</table>
+          <td>
+            <app-edit itemId="{{ item.id }}" category="/clients" />
+            <app-delete-btn (deleted)="onDelete(item.id)"></app-delete-btn>
+          </td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.comment }}</td>
+          <td>{{ item.state }}</td>
+          <td>{{ item.totalCaHt | currency }}</td>
+          <td>{{ item.tva }}</td>
+          <td>{{ item.totalCaHt | totalCa : item.tva | currency }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <app-btn
+      label="Ajouter"
+      styleBtn="btn btn-success ml-1"
+      routeInfo="/clients/add"
+    ></app-btn>
+  </div>
+</div>
